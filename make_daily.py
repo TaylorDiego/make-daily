@@ -2,8 +2,8 @@
 
 # create task list
 
-#     , ['', '\n\n'
-#        , '- ','\n\n']
+#     , ['[add quote here, separating by line]', '\n\n'
+#        , '- [name of quoted]','\n\n']
 
 quotes = [
     ['Perfect is the enemy of good' , '\n\n'
@@ -181,8 +181,6 @@ quotes = [
 
 ]
 
-# print(random.choice(quotes))
-
 daily_template = [
     '-----------------------------------', '\n'
     , 'How to grow TX sales 2x?', '\n'
@@ -285,8 +283,6 @@ quad = [
 def small_tx_logo():
     return [ta('TimeXtender', font='small')]
 
-# small_tx_logo()
-
 def create_today_str():
     day = date.today()
     weekDays = ("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday")
@@ -295,17 +291,13 @@ def create_today_str():
     date_format = f'{day_iso}_{dayname}'
     return date_format
 
-# create_today_str()
-
-def create_yesterday_str():
-    day = (date.today() - timedelta(1))
-    weekDays = ("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday")
-    day_iso = day.isoformat().replace('-', '')
-    dayname = weekDays[day.weekday()]
-    date_format = f'{day_iso}_{dayname}'
-    return date_format
-
-# create_yesterday_str()
+# def create_yesterday_str():
+#     day = (date.today() - timedelta(1))
+#     weekDays = ("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday")
+#     day_iso = day.isoformat().replace('-', '')
+#     dayname = weekDays[day.weekday()]
+#     date_format = f'{day_iso}_{dayname}'
+#     return date_format
 
 def create_today_block():
     date_str = create_today_str()
@@ -330,8 +322,6 @@ def create_daily_notepad(write_lines = [], daily_dir = './OneDrive - Timextender
         f.writelines(quad)
     return f'{date_format}.txt'
 
-# create_daily_notepad()
-
 if __name__ == '__main__':
     import pandas as pd
     import numpy as np
@@ -342,13 +332,10 @@ if __name__ == '__main__':
     import os,sys,pathlib
     from art import text2art as ta
     import random
-
-#     yesterday = f'./OneDrive - Timextender A S/_daily/{create_yesterday_str()}_.txt'
-#     print(yesterday)
-#     os.system(f'notepad {yesterday}')
+    import pyperclip
     
     daily = create_today_str()
-    print(f'{daily}.txt')
+    print(f'created daily file "{daily}.txt"')
     create_daily_notepad()
+    pyperclip.copy(f'{daily}_.txt') # for save as, save string to clipboard
     os.system(f'notepad ./OneDrive - Timextender A S/_daily/{daily}.txt')
-#     os.system('explorer .\OneDrive - Timextender A S\_daily')
