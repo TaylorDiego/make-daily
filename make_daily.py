@@ -291,14 +291,6 @@ def create_today_str():
     date_format = f'{day_iso}_{dayname}'
     return date_format
 
-# def create_yesterday_str():
-#     day = (date.today() - timedelta(1))
-#     weekDays = ("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday")
-#     day_iso = day.isoformat().replace('-', '')
-#     dayname = weekDays[day.weekday()]
-#     date_format = f'{day_iso}_{dayname}'
-#     return date_format
-
 def create_today_block():
     date_str = create_today_str()
     day_of_week = date_str.split('_')[1]
