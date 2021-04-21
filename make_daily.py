@@ -330,4 +330,4 @@ if __name__ == '__main__':
     print(f'created daily file "{daily}.txt"')
     create_daily_notepad()
     pyperclip.copy(f'{daily}_.txt') # for save as, save string to clipboard
-    os.system(f'notepad ./OneDrive - Timextender A S/_daily/{daily}.txt') 
+    os.system(f'notepad ./OneDrive - Timextender A S/_daily/{daily}.txt')
