@@ -260,7 +260,7 @@ daily_template = [
     , '**TimeXtender Tuesdays', '\n'
     , '**User Guide & Knowledge Base Articles', '\n'
     , '**Questions/Ideas/Issues', '\n'
-    , '** POC for Partners', '\n'
+    , '**POC for Partners', '\n'
 ]
 
 quad = [
