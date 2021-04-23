@@ -181,19 +181,8 @@ quotes = [
 
 ]
 
-daily_template = [
-    '-----------------------------------', '\n'
-    , 'How to grow TX sales 2x?', '\n'
-    , '-----------------------------------', '\n'
-    ,'idea 1) ', '\n'
-    ,'idea 2) ', '\n'
-    ,'idea 3) ', '\n\n'
-    
-    , '----------------', '\n'
-    , '----  NOTES  ---', '\n'
-    , '----------------', '\n\n\n'  
-    
-    , '----------------', '\n'
+main_block = [    
+    '----------------', '\n'
     , '----  DONE  ----', '\n'
     , '----------------', '\n\n\n'
     
@@ -242,7 +231,18 @@ daily_template = [
     , '[5] <2021    > {00:  } (p) Python: ', '\n'
     , '[5] <2021    > {00:  } (p) SQL: ', '\n'
     , '[5] <2021    > {00:  } (p) Other: ', '\n\n'
-
+    
+    , '----------------', '\n'
+    , '----  NOTES  ---', '\n'
+    , '----------------', '\n\n\n'  
+    
+    '-----------------------------------', '\n'
+    , 'How to grow TX sales 2x?', '\n'
+    , '-----------------------------------', '\n'
+    ,'idea 1) ', '\n'
+    ,'idea 2) ', '\n'
+    ,'idea 3) ', '\n\n\n'
+    
     , '----------------', '\n'
     , '---  STATUS  ---', '\n'
     , '----------------', '\n'
@@ -253,18 +253,7 @@ daily_template = [
     , '(r) needs review', '\n'
     , '(d) done', '\n\n'
     
-    , '----------------', '\n'
-    , '-----  1:1  ----', '\n'
-    , '----------------', '\n'
-    , '**Personal', '\n'
-    , '**TimeXtender Tuesdays', '\n'
-    , '**User Guide & Knowledge Base Articles', '\n'
-    , '**Questions/Ideas/Issues', '\n'
-    , '**POC for Partners', '\n'
-]
-
-quad = [
-     '                     URGENT', '\n'
+    , '                     URGENT', '\n'
     , '      ________YES_______________NO_________', '\n'
     , '      | Q1: DO          | Q2: PLAN        |', '\n'
     , ' I    |                 |                 |', '\n'
@@ -277,7 +266,16 @@ quad = [
     , ' N   N|   NOT Important |   NOT Important |', '\n'
     , ' T   O|   but           |   and           |', '\n'
     , '      |   Urgent        |   NOT Urgent    |', '\n'
-    , '      |_________________|_________________|', '\n'
+    , '      |_________________|_________________|', '\n\n\n'
+    
+    , '----------------', '\n'
+    , '-----  1:1  ----', '\n'
+    , '----------------', '\n'
+    , '**Personal', '\n'
+    , '**TimeXtender Tuesdays', '\n'
+    , '**User Guide & Knowledge Base Articles', '\n'
+    , '**Questions/Ideas/Issues', '\n'
+    , '**POC for Partners', '\n\n'
 ]
 
 def small_tx_logo():
@@ -291,7 +289,7 @@ def create_today_str():
     date_format = f'{day_iso}_{dayname}'
     return date_format
 
-def create_today_block():
+def create_date_block():
     date_str = create_today_str()
     day_of_week = date_str.split('_')[1]
     date_num = date_str.split('_')[0]
@@ -301,17 +299,16 @@ def create_today_block():
         , '-----------------------------------', '\n\n']
     return date_block
 
-def create_daily_notepad(write_lines = [], daily_dir = './OneDrive - Timextender A S/_daily', template = daily_template, quad = quad):
+def create_daily_notepad(write_lines = [], daily_dir = './OneDrive - Timextender A S/_daily', block = main_block):
     date_format = create_today_str()
-    today_block = create_today_block()
+    date_block = create_date_block()
     file_path = f'{daily_dir}/{date_format}.txt'
     with open(f'{file_path}', 'a') as f: # NB:'x' creates error if file exists
         f.truncate(0) # remove later, only for testing, if only creating the file with 'x'
         f.writelines(small_tx_logo())
-        f.writelines(today_block)
+        f.writelines(date_block)
         f.writelines(random.choice(quotes))
-        f.writelines(template)
-        f.writelines(quad)
+        f.writelines(block)
     return f'{date_format}.txt'
 
 if __name__ == '__main__':
