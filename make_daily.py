@@ -183,20 +183,36 @@ quotes = [
 
 main_block = [    
     '----------------', '\n'
-    , '----  DONE  ----', '\n'
+    , '--  HOME SAFE  -', '\n'
     , '----------------', '\n\n\n'
     
     , '----------------', '\n'
-    , '----  QUICK  ---', '\n'
+    , '-  STEAL BASE  -', '\n'
     , '----------------', '\n'
     , '[0] <2021    > {00:  } (t): ', '\n\n\n'
     
     , '----------------', '\n'
-    , '----  NEXT  ----', '\n'
+    , '---  ON BASE ---', '\n'
     , '----------------', '\n\n\n'
 
     , '----------------', '\n'
-    , '----  LATER  ---', '\n'
+    , "-  YOU'RE OUT  -", '\n'
+    , '----------------', '\n\n\n'
+    
+    , '----------------', '\n'
+    , '---  AT BAT  ---', '\n'
+    , '----------------', '\n\n\n'
+    
+    , '----------------', '\n'
+    , '---  ON DECK ---', '\n'
+    , '----------------', '\n\n\n'
+    
+    , '----------------', '\n'
+    , '-  IN THE HOLE -', '\n'
+    , '----------------', '\n\n\n'
+    
+    , '----------------', '\n'
+    , '--  BLEACHERS --', '\n'
     , '----------------', '\n\n\n'
     
     , '----------------', '\n'
@@ -265,6 +281,7 @@ main_block = [
     , '-----  1:1  ----', '\n'
     , '----------------', '\n'
     , '**Personal', '\n'
+    , '**Partner', '\n'
     , '**TimeXtender Tuesdays', '\n'
     , '**User Guide & Knowledge Base Articles', '\n'
     , '**Questions/Ideas/Issues', '\n'
@@ -273,6 +290,9 @@ main_block = [
 
 def small_tx_logo():
     return [ta('TimeXtender', font='small')]
+
+def small_daily_plan():
+    return [ta('Daily  Plan', font='small'), '\n']
 
 def create_today_str():
     day = date.today()
@@ -301,6 +321,7 @@ def create_daily_notepad(write_lines = [], daily_dir = './OneDrive - Timextender
         f.writelines(small_tx_logo())
         f.writelines(date_block)
         f.writelines(random.choice(quotes))
+        f.writelines(small_daily_plan())
         f.writelines(block)
     return f'{date_format}.txt'
 
