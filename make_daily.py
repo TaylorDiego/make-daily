@@ -326,13 +326,8 @@ def create_daily_notepad(write_lines = [], daily_dir = './OneDrive - Timextender
     return f'{date_format}.txt'
 
 if __name__ == '__main__':
-    import pandas as pd
-    import numpy as np
-    import matplotlib.pyplot as plt
-    # %matplotlib inline
-
     from datetime import date, timedelta
-    import os,sys,pathlib
+    import os, sys, pathlib
     from art import text2art as ta
     import random
     import pyperclip
