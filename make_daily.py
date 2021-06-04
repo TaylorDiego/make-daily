@@ -152,6 +152,7 @@ quotes = [
        , 'to add superfluous attributes to something', '\n'
        , 'to go overboard, to over-egg the pudding', '\n'
        , 'try to improve on what is already beautiful or excellent', '\n\n'
+       
        , "ACT IV, SCENE 2, The Life and Death of King John:", '\n'
        , "SALISBURY. Therefore, to be possess'd with double pomp,", '\n'
        , 'To guard a title that was rich before,', '\n'
@@ -160,7 +161,8 @@ quotes = [
        , 'To smooth the ice, or add another hue', '\n'
        , 'Unto the rainbow, or with taper-light', '\n'
        , 'to seek the beauteous eye of heaven to garnish,', '\n'
-       , 'is wasteful and ridiculous excess,', '\n\n'
+       , 'is wasteful and ridiculous excess.', '\n\n'
+       , '- William Shakespeare', '\n\n'
       ]
     
     , ['Simplicity boils down to two steps: Identify the essential. Eliminate the rest.', '\n'
